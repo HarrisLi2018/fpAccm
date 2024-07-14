@@ -1,0 +1,23 @@
+module fpAccmTop(
+        iClk,
+        iRst_n,
+        
+        iDataNum,
+        iDval,
+        ifpData,
+        
+        oDval,
+        ofpAccmResult
+
+);
+
+input           iClk;
+input           iRst_n;
+        
+input   [15:0]  iDataNum;/* 0~65535 */
+input           iDval;
+input   [31:0]  ifpData;
+        
+output          oDval;
+output  [31:0]  ofpAccmResult;
+endmodule
