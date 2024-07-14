@@ -1,11 +1,11 @@
-Fitter Status : Successful - Sun Jul 14 20:14:08 2024
+Fitter Status : Successful - Sun Jul 14 23:55:29 2024
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : DE2_70_TOP
 Top-level Entity Name : DE2_70_TOP
 Family : Cyclone II
 Device : EP2C70F896C6
 Timing Models : Final
-Total logic elements : 5,030 / 68,416 ( 7 % )
+Total logic elements : 5,028 / 68,416 ( 7 % )
     Total combinational functions : 2,395 / 68,416 ( 4 % )
     Dedicated logic registers : 4,207 / 68,416 ( 6 % )
 Total registers : 4207

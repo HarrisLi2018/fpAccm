@@ -590,14 +590,6 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIP
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=512" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=512" -section_id auto_signaltap_0
-set_global_assignment -name VERILOG_FILE ip/DE2_70_TOP.v
-set_global_assignment -name SDC_FILE DE2_70_TOP.sdc
-set_global_assignment -name QIP_FILE ip/fpadd.qip
-set_global_assignment -name VERILOG_FILE ip/fpMux.v
-set_global_assignment -name VERILOG_FILE ip/fpAddTop.v
-set_global_assignment -name VERILOG_FILE ip/fpadd.v
-set_global_assignment -name VERILOG_FILE ip/fpAccmTop.v
-set_global_assignment -name VERILOG_FILE ip/testbench.v
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
@@ -1156,5 +1148,13 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=00
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=845" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_LOWORD=8146" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_HIWORD=31318" -section_id auto_signaltap_0
+set_global_assignment -name SDC_FILE DE2_70_TOP.sdc
+set_global_assignment -name VERILOG_FILE ip/DE2_70_TOP.v
+set_global_assignment -name QIP_FILE ip/fpadd.qip
+set_global_assignment -name VERILOG_FILE ip/fpMux.v
+set_global_assignment -name VERILOG_FILE ip/fpAddTop.v
+set_global_assignment -name VERILOG_FILE ip/fpadd.v
+set_global_assignment -name VERILOG_FILE ip/fpAccmTop.v
+set_global_assignment -name VERILOG_FILE ip/testbench.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE "D:/prj/NewAIChip/fpAccm/fpAccm/DE2_70_fpAccm/out/stp1_auto_stripped.stp"
