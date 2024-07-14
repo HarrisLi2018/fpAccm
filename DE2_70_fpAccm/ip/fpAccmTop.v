@@ -1,14 +1,25 @@
+/*
+本模組是浮點數乘加器，做浮點數相加
+1.reset後在第一次iDval進來前，iDataNum都能修改，
+2.再計算累加值時需注意iDataNum需保持不變，直到oDone訊號起來後，才能修改iDataNum值，此時會再重新計算累加值，
+
+
+
+
+
+*/
+
 module fpAccmTop(
-        iClk,
-        iRst_n,
+        iClk,    /* sync clock */
+        iRst_n,  /* async reset_n */
         
-        iDataNum,
-        iDval,
-        ifpData,
+        iDataNum,/* Total data number to accumlate */
+        iDval,   /* input data valid */
+        ifpData, /* input float data */
         
 
-        oDval,
-        ofpAccmResult,
+        oDval,   /* output data valid */
+        ofpAccmResult, /* output data */
         oError,
         oDone,  /* when done is set to 1, the fpAccmTop is need to reset */
         
@@ -21,7 +32,7 @@ parameter ADDLATENCY = 7;
 
 input           iClk;
 input           iRst_n;
-        
+
 input   [15:0]  iDataNum;/* 0~65535 */
 input           iDval;
 input   [31:0]  ifpData;
@@ -44,6 +55,7 @@ reg [31:0]      rDlyInfpData;
 
 reg             rPipelineDval;
 reg [31:0]      rPipelineData;
+reg [15:0]      rDataNum;
 
 always@(posedge iClk or negedge iRst_n)begin
     if(!iRst_n)begin
@@ -75,22 +87,25 @@ always@(posedge iClk or negedge iRst_n)begin
         rFinal <= rFinal;
         rDataNumCnt <= rDataNumCnt;
         if(rPipelineDval)begin
+            rDataNum <= iDataNum-1;
             if(iDataNum == 0) begin
                 oErrInpuGTNum <= 1;
                 rFinal <= 0;
                 rDataNumCnt <= 0;
-                oErrInpuGTNum <= 0;
             end else if(rDataNumCnt >= iDataNum-1) begin
                 rFinal <= 1;
                 rDataNumCnt <= rDataNumCnt;
             end else begin
                 rFinal <= 0;
                 rDataNumCnt <= rDataNumCnt +1;
-                oErrInpuGTNum <= 0;
             end
             
             if(rFinal) begin
                 oErrInpuGTNum <= 1;
+            end else if(rDataNum == 0) begin
+                oErrInpuGTNum <= 1;
+            end else if(rDataNumCnt >= rDataNum-1) begin
+                oErrInpuGTNum <= 0;
             end
         end else if(oDone) begin
             rFinal <= 0;
@@ -155,7 +170,7 @@ always@(posedge iClk or negedge iRst_n)begin
             ofpAccmResult <= 0;
             oDone <= 0;
         end else if(iDval && (iDataNum <= 1))begin /* iDataNum <= 1*/
-            oDval <= iDval;
+            oDval <= 1;
             ofpAccmResult <= ifpData;
             oDone <= 1;
         end else if(rFinal && (!wfpAddRegState)&&(wfpMuxRegState))begin

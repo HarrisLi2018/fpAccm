@@ -1,0 +1,8 @@
+##########.gitignore檔案內容
+# ignore incremental_db
+/incremental_db
+# ignore /db
+/db
+# ignore file
+*.tmp
+*.bak

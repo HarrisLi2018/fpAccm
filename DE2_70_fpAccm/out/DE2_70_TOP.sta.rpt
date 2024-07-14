@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DE2_70_TOP
-Sun Jul 14 10:14:50 2024
+Sun Jul 14 20:14:20 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -244,7 +244,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Sun Jul 14 10:14:41 2024
+    Info: Processing started: Sun Jul 14 20:14:17 2024
 Info: Command: quartus_sta DE2_70_TOP -c DE2_70_TOP
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
@@ -284,9 +284,9 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4652 megabytes
-    Info: Processing ended: Sun Jul 14 10:14:50 2024
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 4651 megabytes
+    Info: Processing ended: Sun Jul 14 20:14:20 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
